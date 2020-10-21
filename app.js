@@ -17,10 +17,27 @@ console.log(btn)
   console.log("inside eventListener");
   console.log(e.currentTarget.classList);
   const styles = e.currentTarget.classList;
+  console.log("styles -",styles);
   if(styles.contains('decrease')){
-      console.log("inside if")
+      console.log("inside if styles - decrease")
       count--;
   }//if
+  else if(styles.contains('increase')){
+    count++;
+  }//if
+  else{
+      count=0;
+  }//else
+  if(count > 0){
+      console.log("inside color if");
+      value.style.color = "green";
+  }
+  if(count < 0){
+      value.style.color = 'red';
+  }
+  if(count ===0){
+      value.style.color = "#333";
+  }
   value.textContent = count;
- });
-});
+ });//addEventListener
+});//forEach
